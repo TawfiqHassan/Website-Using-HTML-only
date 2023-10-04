@@ -22,10 +22,27 @@
             padding: 3px;
             margin: 2px;
         }
+        
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-image: linear-gradient(#84ff00c5, rgba(0, 255, 213, 0.336));
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 40px;
+        }
     </style>
 </head>
 
 <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">^|^</button>
     <!--Header-->
     <div style="border: 0px solid rgb(2, 2, 2);">
         <table border="0" width="100%" cellspacing="0" bgcolor="#73D40B">
@@ -38,11 +55,11 @@
                                 <font face="cursive" size="5" color="#f3f2ed"><b>Mr. Tawfiq</b></font>
                             </td>
                             <td width="20%"></td>
-                            <td><a href="#Home">Home</a></td>
+                            <td><a href="#Home"><b>Home</b></a></td>
                             <!--<td><a href="#">About</a></td>-->
-                            <td><a href="#Services">Services</a></td>
-                            <td><a href="#Team">Team</a></td>
-                            <td><a href="#Contact">Contact</a></td>
+                            <td><a href="#Services"><b>Services</b></a></td>
+                            <td><a href="#Team"><b>Team</b></a></td>
+                            <td><a href="#Contact"><b>Contact</b></a></td>
                 </td>
                 </tr>
                 </table>
@@ -242,6 +259,29 @@
     <footer style="text-align: center; display: block; background-color: black; color: antiquewhite;">
         <marquee behavior="alternate" direction="">Copyright © 2023 Mr. Tech Lab. All Rights Reserved.</marquee>
     </footer>
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 
 </html>
